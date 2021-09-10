@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: carrinho-compras
+
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+management:
+  health:
+    redis:
+      enabled: false

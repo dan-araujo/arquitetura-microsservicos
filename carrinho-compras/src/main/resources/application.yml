@@ -1,12 +1,15 @@
-spring:
-  application:
-    name: carrinho-compras
+server:
+  port:
+    8082
 
-  cloud:
-    config:
-      uri: http://localhost:8888
-
-management:
-  health:
-    redis:
-      enabled: false
+eureka:
+  instance:
+    hostname: localhost
+    port: 9000
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    server:
+      wait-time-in-ms-when-sync-empty: 3000
